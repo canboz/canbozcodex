@@ -108,6 +108,29 @@ img {
   outline-color: var(--color-on-nav);
 }
 
+.skipLink {
+  position: absolute;
+  z-index: 10;
+  top: 0.75rem;
+  left: 1rem;
+  max-width: calc(100% - 2rem);
+  min-height: 44px;
+  padding: 0.625rem var(--space-2);
+  border-radius: var(--space-1);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  transform: translateY(calc(-100% - 1rem));
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.navBrand:focus-visible {
+  outline-offset: -4px;
+}
+
 /* Shared layout */
 .banner,
 .aboutSection,
@@ -408,6 +431,11 @@ img {
   font-weight: 600;
 }
 
+.filterField input::placeholder {
+  color: var(--color-muted);
+  opacity: 1;
+}
+
 .filterField input,
 .filterField select,
 .filterReset {
@@ -550,6 +578,11 @@ img {
 }
 
 .socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   color: inherit;
   font-size: 1.875rem;
 }
