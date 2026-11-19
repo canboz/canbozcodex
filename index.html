@@ -14,7 +14,19 @@
 <body>
     <header>
         <nav class="nav" aria-label="Ana gezinme">
-            <img class="navLogo" src="/images/cblogo.png" alt="Can Boz">
+            <a class="navBrand" href="#home" aria-label="Can Boz — Ana sayfa">
+                <img class="navLogo" src="/images/cblogo.png" alt="Can Boz">
+            </a>
+            <button class="navToggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav-links" hidden>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul class="navLinks" id="nav-links">
+                <li><a href="#home">Ana sayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#courses">Kurslarım</a></li>
+            </ul>
         </nav>
     </header>
     <main id="main-content">
