@@ -8,7 +8,7 @@
   --color-about: #f0ffff;
   --color-surface: #fff;
   --color-nav: #8b008b;
-  --color-footer: #000;
+  --color-footer: var(--color-nav);
   --color-price: #a52a2a;
   --color-portrait: #f3eaf5;
   --color-border: #dfd2e3;
@@ -36,7 +36,7 @@
   --color-page: #151119;
   --color-surface: #211b27;
   --color-nav: #8b008b;
-  --color-footer: #0e0b11;
+  --color-footer: var(--color-nav);
   --color-price: #ffb4aa;
   --color-portrait: #2c2333;
   --color-border: #6e6077;
@@ -54,7 +54,7 @@
     --color-page: #151119;
     --color-surface: #211b27;
     --color-nav: #8b008b;
-    --color-footer: #0e0b11;
+    --color-footer: var(--color-nav);
     --color-price: #ffb4aa;
     --color-portrait: #2c2333;
     --color-border: #6e6077;
@@ -600,7 +600,7 @@ picture {
 
 /* Footer */
 .footer {
-  padding: var(--section-space) var(--space-3);
+  padding: var(--space-3);
   background: var(--color-footer);
   color: var(--color-on-footer);
   text-align: center;
@@ -610,7 +610,7 @@ picture {
   display: flex;
   justify-content: center;
   gap: var(--space-4);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-1);
   list-style: none;
 }
 
