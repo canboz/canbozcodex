@@ -9,6 +9,9 @@
   --color-nav: #696969;
   --color-footer: #000;
   --color-price: #a52a2a;
+  --color-portrait: #f3eaf5;
+  --color-border: #dfd2e3;
+  --color-muted: #58505b;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.25rem;
@@ -79,9 +82,9 @@ img {
 
 .bannerDiv,
 .aboutDiv {
-  display: flex;
-  justify-content: space-around;
-  gap: var(--space-4);
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
 }
 
 .bannerInfo,
@@ -90,8 +93,6 @@ img {
   width: 100%;
 }
 
-.bannerDiv,
-.aboutTitle,
 .courseTitle {
   text-align: center;
 }
@@ -159,36 +160,63 @@ img {
 }
 
 .banner {
-  padding-block: var(--space-5);
+  padding-block: var(--section-space);
+  background: var(--color-surface);
 }
 
-.bannerInfo .name,
 .aboutName,
 .courseName {
   font-size: clamp(2rem, 4vw, 3.125rem);
   line-height: 1.2;
 }
 
-.bannerInfo .name,
-.bannerInfo .title,
-.bannerInfo .students {
+.bannerInfo .name {
+  margin-bottom: var(--space-2);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.bannerInfo::before,
+.aboutTitle::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
   margin-bottom: var(--space-3);
+  border-radius: var(--space-1);
+  background: var(--color-accent);
 }
 
 .bannerInfo .title {
-  font-size: clamp(1.5rem, 3.3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.25;
+  max-width: 28ch;
+  color: var(--color-muted);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-.bannerInfo .students {
-  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
-  font-weight: 700;
+.heroStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  margin-block: var(--space-4) var(--space-1);
+  padding-block: var(--space-3);
+  border-block: 1px solid var(--color-border);
 }
 
+.bannerInfo .students,
 .bannerInfo .manCourses {
-  font-size: 1.25rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+.heroStats span {
+  display: block;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
 }
 
 .bannerInfo span,
@@ -205,15 +233,31 @@ img {
 
 .bannerImg,
 .aboutImg {
-  display: none;
-  border: 4px solid var(--color-accent);
+  width: 100%;
+  background: var(--color-portrait);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
+}
+
+.bannerImg {
+  width: min(100%, 240px);
+  justify-self: center;
+}
+
+.aboutImg {
+  display: none;
 }
 
 .bannerPhoto,
 .aboutPhoto {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bannerPhoto {
+  height: 280px;
 }
 
 /* Buttons */
@@ -239,7 +283,12 @@ img {
 
 /* Biography */
 .aboutSection {
-  background: var(--color-about);
+  background: var(--color-page);
+}
+
+.aboutInfo {
+  max-width: 65ch;
+  justify-self: center;
 }
 
 .aboutTitle {
@@ -248,7 +297,12 @@ img {
 
 .aboutInfo p {
   margin-bottom: var(--space-3);
-  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.8;
+}
+
+.aboutInfo p:last-child {
+  margin-bottom: 0;
 }
 
 /* Catalog */
@@ -351,32 +405,31 @@ img {
   }
 
   .bannerDiv {
-    margin-top: var(--space-4);
-    text-align: left;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   }
 
-  .bannerInfo {
-    flex: 1;
+  .bannerImg {
+    width: 100%;
+    max-width: 360px;
+    justify-self: end;
   }
 
-  .bannerImg,
+  .bannerPhoto {
+    height: clamp(340px, 35vw, 440px);
+  }
+
+  .aboutDiv {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  }
+
   .aboutImg {
     display: block;
-    flex: 0 0 30%;
-    align-self: flex-start;
+    max-width: 300px;
+    justify-self: center;
   }
 
-  .bannerInfo .underline,
-  .aboutTitle .underline {
-    margin-inline: 0;
-  }
-
-  .aboutInfo {
-    width: 40%;
-  }
-
-  .aboutTitle {
-    text-align: left;
+  .aboutPhoto {
+    height: 360px;
   }
 
   .course {
