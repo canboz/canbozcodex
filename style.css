@@ -541,6 +541,19 @@ picture {
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-button);
   border-radius: var(--space-3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .course:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
 }
 
 .course img {
@@ -663,12 +676,15 @@ picture {
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .bannerImg,
-  .aboutImg {
+  .aboutImg,
+  .course {
     transition: none;
   }
 
   .bannerImg:hover,
-  .aboutImg:hover {
+  .aboutImg:hover,
+  .course:hover,
+  .course:focus-within {
     transform: none;
   }
 }
