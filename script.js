@@ -52,8 +52,53 @@
   }
 
   function initCatalog() {
-    // Keep the complete HTML catalog visible. Search and filter controls will
-    // be revealed only after their initialization succeeds in Phase 5.
+    const tools = document.querySelector(".catalogTools");
+    if (!tools) return;
+    const form = tools.querySelector("form");
+    const search = tools.querySelector("#course-search");
+    const topic = tools.querySelector("#course-topic");
+    const language = tools.querySelector("#course-language");
+    const count = tools.querySelector(".catalogCount");
+    const empty = tools.querySelector(".catalogEmpty");
+    const resetEmpty = empty?.querySelector("button");
+    const cards = [...document.querySelectorAll(".courses .course")];
+    if (!form || !search || !topic || !language || !count || !resetEmpty || !cards.length) return;
+    if (cards.some((card) => !card.querySelector("h3") || !card.dataset.topic || !card.dataset.language)) return;
+
+    const normalize = (text) => text.trim().toLocaleLowerCase("tr")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\u0131/g, "i");
+    const catalog = cards.map((card) => ({
+      card,
+      title: normalize(card.querySelector("h3").textContent),
+    }));
+
+    const update = () => {
+      const query = normalize(search.value);
+      let visible = 0;
+      catalog.forEach(({ card, title }) => {
+        const matches = title.includes(query)
+          && (!topic.value || card.dataset.topic === topic.value)
+          && (!language.value || card.dataset.language === language.value);
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      count.textContent = `${visible} / ${cards.length} kurs gösteriliyor.`;
+      empty.hidden = visible !== 0;
+    };
+
+    form.addEventListener("submit", (event) => event.preventDefault());
+    search.addEventListener("input", update);
+    topic.addEventListener("change", update);
+    language.addEventListener("change", update);
+    // Native reset values are applied after the reset event is dispatched.
+    form.addEventListener("reset", () => setTimeout(update, 0));
+    resetEmpty.addEventListener("click", () => {
+      form.reset();
+      search.focus();
+    });
+
+    update();
+    tools.hidden = false;
   }
 
   initNavigation();

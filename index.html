@@ -87,8 +87,40 @@
 
 
             </div>
+            <div class="catalogTools" hidden>
+                <form class="catalogFilters" role="search" aria-label="Kurs arama ve filtreleme">
+                    <div class="filterField">
+                        <label for="course-search">Kurs ara</label>
+                        <input id="course-search" name="search" type="search" placeholder="Kurs adı yazın" autocomplete="off">
+                    </div>
+                    <div class="filterField">
+                        <label for="course-topic">Konu</label>
+                        <select id="course-topic" name="topic">
+                            <option value="">Tüm konular</option>
+                            <option value="programming">Programlama</option>
+                            <option value="web">Web geliştirme</option>
+                            <option value="data-office">Veri ve ofis</option>
+                            <option value="career">Kariyer</option>
+                        </select>
+                    </div>
+                    <div class="filterField">
+                        <label for="course-language">Dil</label>
+                        <select id="course-language" name="language">
+                            <option value="">Tüm diller</option>
+                            <option value="tr">Türkçe</option>
+                            <option value="en">İngilizce</option>
+                        </select>
+                    </div>
+                    <button class="filterReset" type="reset">Filtreleri temizle</button>
+                </form>
+                <p class="catalogCount" role="status" aria-live="polite" aria-atomic="true"></p>
+                <div class="catalogEmpty" hidden>
+                    <p>Aramanıza uygun kurs bulunamadı.</p>
+                    <button class="filterReset" type="button">Aramayı ve filtreleri temizle</button>
+                </div>
+            </div>
             <div class="courses">
-                <article class="course" aria-labelledby="course-1">
+                <article class="course" data-topic="web" data-language="en" aria-labelledby="course-1">
                     <img src="images/vuetypescripting.png" alt="Vue 3 and Typescript">
                     <div class="courseInfo">
                         <h3 id="course-1">Vue 3 and Typescript</h3>
@@ -97,7 +129,7 @@
                             class="btn" aria-label="Vue 3 and Typescript - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-2">
+                <article class="course" data-topic="web" data-language="en" aria-labelledby="course-2">
                     <img src="images/nuxtjsing.png" alt="Nuxt.js 4">
                     <div class="courseInfo">
                         <h3 id="course-2">Nuxt.js 4</h3>
@@ -105,7 +137,7 @@
                         <a href="https://www.udemy.com/course/draft/7222501/?couponCode=TEMMUZ2026" class="btn" aria-label="Nuxt.js 4 - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-3">
+                <article class="course" data-topic="web" data-language="en" aria-labelledby="course-3">
                     <img src="images/typescripting.png" alt="Master Typescript">
                     <div class="courseInfo">
                         <h3 id="course-3">Master Typescript</h3>
@@ -114,7 +146,7 @@
                             class="btn" aria-label="Master Typescript - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-4">
+                <article class="course" data-topic="web" data-language="en" aria-labelledby="course-4">
                     <img src="images/nextjsing.png" alt="Next.js 16">
                     <div class="courseInfo">
                         <h3 id="course-4">Next.js 16</h3>
@@ -123,7 +155,7 @@
                             class="btn" aria-label="Next.js 16 - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-5">
+                <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-5">
                     <img src="images/goo.png" alt="Learn Go Programming">
                     <div class="courseInfo">
                         <h3 id="course-5">Learn Go Programming</h3>
@@ -132,7 +164,7 @@
                             class="btn" aria-label="Learn Go Programming - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-6">
+                <article class="course" data-topic="web" data-language="en" aria-labelledby="course-6">
                     <img src="images/tailwinding.png" alt="Master Tailwind CSS v4">
                     <div class="courseInfo">
                         <h3 id="course-6">Master Tailwind CSS v4</h3>
@@ -141,7 +173,7 @@
                             class="btn" aria-label="Master Tailwind CSS v4 - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-7">
+                <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-7">
                     <img src="images/javaing.png" alt="Java Programming Course">
                     <div class="courseInfo">
                         <h3 id="course-7">Java Programming Course</h3>
@@ -150,7 +182,7 @@
                             class="btn" aria-label="Java Programming Course - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-8">
+                <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-8">
                     <img src="images/Python.png" alt="Python Programming Course">
                     <div class="courseInfo">
                         <h3 id="course-8">Python Programming Course</h3>
@@ -159,7 +191,7 @@
                             class="btn" aria-label="Python Programming Course - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-9">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-9">
                     <img src="images/algoritma.png" alt="Algoritma Geliştirme Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-9">Algoritma Geliştirme Eğitimi</h3>
@@ -167,7 +199,7 @@
                         <a href="https://www.udemy.com/course/draft/6190305/?couponCode=TEMMUZ2026" class="btn" aria-label="Algoritma Geliştirme Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-10">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-10">
                     <img src="images/c.png" alt="C Programlama Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-10">C Programlama Eğitimi</h3>
@@ -176,7 +208,7 @@
                             class="btn" aria-label="C Programlama Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-11">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-11">
                     <img src="images/cplus.jpg" alt="C++ Programlama Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-11">C++ Programlama Eğitimi</h3>
@@ -185,7 +217,7 @@
                             class="btn" aria-label="C++ Programlama Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-12">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-12">
                     <img src="images/pyhton.png" alt="Python Programlama Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-12">Python Programlama Eğitimi</h3>
@@ -194,7 +226,7 @@
                             class="btn" aria-label="Python Programlama Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-13">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-13">
                     <img src="images/java.png" alt="Java Programlama Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-13">Java Programlama Eğitimi</h3>
@@ -203,7 +235,7 @@
                             class="btn" aria-label="Java Programlama Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-14">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-14">
                     <img src="images/go.png" alt="Go Programlama Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-14">Go Programlama Eğitimi</h3>
@@ -211,7 +243,7 @@
                         <a href="https://www.udemy.com/course/go-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Go Programlama Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-15">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-15">
                     <img src="images/react.png" alt="Uygulamalı React Js Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-15">Uygulamalı React Js Eğitimi</h3>
@@ -219,7 +251,7 @@
                         <a href="https://www.udemy.com/course/react-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Uygulamalı React Js Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-16">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-16">
                     <img src="images/nextjs.png" alt="Next.js Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-16">Next.js Eğitimi</h3>
@@ -227,7 +259,7 @@
                         <a href="https://www.udemy.com/course/nextjs-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Next.js Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-17">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-17">
                     <img src="images/nuxt.png" alt="Nuxt.js Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-17">Nuxt.js Eğitimi</h3>
@@ -235,7 +267,7 @@
                         <a href="https://www.udemy.com/course/nuxtjs-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Nuxt.js Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-18">
+                <article class="course" data-topic="career" data-language="tr" aria-labelledby="course-18">
                     <img src="images/yazilimci.png" alt="Yazılımcı Olma Kursu">
                     <div class="courseInfo">
                         <h3 id="course-18">Yazılımcı Olma Kursu</h3>
@@ -244,7 +276,7 @@
                             class="btn" aria-label="Yazılımcı Olma Kursu - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-19">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-19">
                     <img src="images/react.png" alt="Uygulamalı React Native Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-19">Uygulamalı React Native Eğitimi</h3>
@@ -253,7 +285,7 @@
                             class="btn" aria-label="Uygulamalı React Native Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-20">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-20">
                     <img src="images/frontend.jpg" alt="Komple Frontend Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-20">Komple Frontend Eğitimi</h3>
@@ -262,7 +294,7 @@
                             class="btn" aria-label="Komple Frontend Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-21">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-21">
                     <img src="images/kompleweb.jpg" alt="Komple Web Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-21">Komple Web Eğitimi</h3>
@@ -271,7 +303,7 @@
                             class="btn" aria-label="Komple Web Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-22">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-22">
                     <img src="images/django.png" alt="Django Web Geliştirme Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-22">Django Web Geliştirme Eğitimi</h3>
@@ -280,7 +312,7 @@
                             class="btn" aria-label="Django Web Geliştirme Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-23">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-23">
                     <img src="images/tailwind.png" alt="Tailwind Css Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-23">Tailwind Css Eğitimi</h3>
@@ -289,7 +321,7 @@
                             class="btn" aria-label="Tailwind Css Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-24">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-24">
                     <img src="images/javascript.png" alt="Uygulamalı Javascript Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-24">Uygulamalı Javascript Eğitimi</h3>
@@ -298,7 +330,7 @@
                             class="btn" aria-label="Uygulamalı Javascript Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-25">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-25">
                     <img src="images/csharp.png" alt="C# Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-25">C# Eğitimi</h3>
@@ -307,7 +339,7 @@
                             class="btn" aria-label="C# Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-26">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-26">
                     <img src="images/angular.jpg" alt="Angular Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-26">Angular Eğitimi</h3>
@@ -315,7 +347,7 @@
                         <a href="https://www.udemy.com/course/angular-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Angular Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-27">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-27">
                     <img src="images/typescript.jpg" alt="Typescript Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-27">Typescript Eğitimi</h3>
@@ -324,7 +356,7 @@
                             class="btn" aria-label="Typescript Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-28">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-28">
                     <img src="images/boostrap.png" alt="Bootstrap 5 Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-28">Bootstrap 5 Eğitimi</h3>
@@ -333,7 +365,7 @@
                             class="btn" aria-label="Bootstrap 5 Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-29">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-29">
                     <img src="images/css.png" alt="Css Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-29">Css Eğitimi</h3>
@@ -341,7 +373,7 @@
                         <a href="https://www.udemy.com/course/css-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Css Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-30">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-30">
                     <img src="images/vue.jpg" alt="Vue Js Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-30">Vue Js Eğitimi</h3>
@@ -349,7 +381,7 @@
                         <a href="https://www.udemy.com/course/vue-js-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Vue Js Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-31">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-31">
                     <img src="images/vuetypescript.png" alt="Vue 3 - Typescript">
                     <div class="courseInfo">
                         <h3 id="course-31">Vue 3 - Typescript</h3>
@@ -358,7 +390,7 @@
                             class="btn" aria-label="Vue 3 - Typescript - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-32">
+                <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-32">
                     <img src="images/linq.png" alt="Linq Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-32">Linq Eğitimi</h3>
@@ -367,7 +399,7 @@
                             class="btn" aria-label="Linq Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-33">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-33">
                     <img src="images/materialUi.png" alt="Material Ui Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-33">Material Ui Eğitimi</h3>
@@ -376,7 +408,7 @@
                             class="btn" aria-label="Material Ui Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-34">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-34">
                     <img src="images/rxjs.png" alt="Rxjs Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-34">Rxjs Eğitimi</h3>
@@ -384,7 +416,7 @@
                         <a href="https://www.udemy.com/course/rxjs-egitimi/?couponCode=TEMMUZ2026" class="btn" aria-label="Rxjs Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-35">
+                <article class="course" data-topic="data-office" data-language="tr" aria-labelledby="course-35">
                     <img src="images/sql.png" alt="Sql Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-35">Sql Eğitimi</h3>
@@ -393,7 +425,7 @@
                             class="btn" aria-label="Sql Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-36">
+                <article class="course" data-topic="data-office" data-language="tr" aria-labelledby="course-36">
                     <img src="images/excel.png" alt="Excel Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-36">Excel Eğitimi</h3>
@@ -402,7 +434,7 @@
                             class="btn" aria-label="Excel Eğitimi - Kaydol">Kaydol</a>
                     </div>
                 </article>
-                <article class="course" aria-labelledby="course-37">
+                <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-37">
                     <img src="images/html.png" alt="Html Eğitimi">
                     <div class="courseInfo">
                         <h3 id="course-37">Html Eğitimi</h3>
