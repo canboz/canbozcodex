@@ -246,6 +246,34 @@ picture {
   cursor: pointer;
 }
 
+.languageSwitcher {
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.languageSwitcher button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.625rem var(--space-1);
+  border: 1px solid currentColor;
+  border-radius: var(--space-1);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.languageSwitcher button[aria-pressed="true"] {
+  background: var(--color-on-nav);
+  color: var(--color-nav);
+}
+
+.languageSwitcher button:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
 .themeToggle[aria-pressed="true"] {
   background: var(--color-accent);
   color: var(--color-on-accent);
