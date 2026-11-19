@@ -1,6 +1,37 @@
 (() => {
   "use strict";
 
+  function initTheme() {
+    const button = document.querySelector(".themeToggle");
+    const control = document.querySelector(".themeControl");
+    if (!button || !control) return;
+
+    const root = document.documentElement;
+    const system = window.matchMedia("(prefers-color-scheme: dark)");
+    let explicit = root.dataset.theme === "light" || root.dataset.theme === "dark";
+    const apply = (dark) => {
+      root.dataset.theme = dark ? "dark" : "light";
+      button.setAttribute("aria-pressed", String(dark));
+    };
+
+    button.addEventListener("click", () => {
+      const dark = root.dataset.theme !== "dark";
+      explicit = true;
+      apply(dark);
+      try {
+        localStorage.setItem("canboz-theme", root.dataset.theme);
+      } catch {
+        // Retain the user's selection for this page even if saving is blocked.
+      }
+    });
+    system.addEventListener("change", (event) => {
+      if (!explicit) apply(event.matches);
+    });
+
+    apply(explicit ? root.dataset.theme === "dark" : system.matches);
+    control.hidden = false;
+  }
+
   function initNavigation() {
     const nav = document.querySelector(".nav");
     const toggle = nav?.querySelector(".navToggle");
@@ -101,6 +132,7 @@
     tools.hidden = false;
   }
 
+  initTheme();
   initNavigation();
   initCatalog();
 })();
