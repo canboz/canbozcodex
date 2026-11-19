@@ -7,9 +7,8 @@
     <title>Can Boz</title>
     <script src="theme.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/images/cblogo.png">
-    <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/2ce1731240.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="images/cblogo.png">
+    <script src="script.js" defer blocking="render"></script>
 </head>
 
 <body>
@@ -17,7 +16,7 @@
     <header>
         <nav class="nav" aria-label="Ana gezinme">
             <a class="navBrand" href="#home" aria-label="Can Boz — Ana sayfa">
-                <img class="navLogo" src="/images/cblogo.png" alt="Can Boz">
+                <img class="navLogo" src="images/cblogo.png" width="96" height="96" alt="Can Boz">
             </a>
             <button class="navToggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav-links" hidden>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
@@ -59,14 +58,20 @@
 
                 </div>
                 <div class="bannerImg">
-                    <img src="images/canbozfoto.png" class="bannerPhoto" alt="">
+                    <picture>
+                        <source type="image/webp" srcset="images/canbozfoto-320.webp 320w, images/canbozfoto-640.webp 640w, images/canbozfoto-960.webp 960w" sizes="(max-width: 768px) 240px, (max-width: 1024px) 35vw, 360px">
+                        <img src="images/canbozfoto.png" class="bannerPhoto" alt="" width="3456" height="5184" loading="eager" fetchpriority="high" decoding="async">
+                    </picture>
                 </div>
             </div>
         </section>
         <section class="aboutSection" id="about" aria-labelledby="about-title">
             <div class="aboutDiv">
                 <div class="aboutImg">
-                    <img src="images/canbozfoto.png" class="aboutPhoto" alt="">
+                    <picture>
+                        <source type="image/webp" srcset="images/canbozfoto-320.webp 320w, images/canbozfoto-640.webp 640w, images/canbozfoto-960.webp 960w" sizes="300px">
+                        <img src="images/canbozfoto.png" class="aboutPhoto" alt="" width="3456" height="5184" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="aboutInfo">
                     <div class="aboutTitle">
@@ -134,7 +139,10 @@
             </div>
             <div class="courses">
                 <article class="course" data-topic="web" data-language="en" aria-labelledby="course-1">
-                    <img src="images/vuetypescripting.png" alt="Vue 3 and Typescript">
+                    <picture>
+                        <source srcset="images/vuetypescripting.webp" type="image/webp">
+                        <img src="images/vuetypescripting.png" alt="Vue 3 and Typescript" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-1">Vue 3 and Typescript</h3>
                         <p class="price">13 $</p>
@@ -143,7 +151,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="en" aria-labelledby="course-2">
-                    <img src="images/nuxtjsing.png" alt="Nuxt.js 4">
+                    <picture>
+                        <source srcset="images/nuxtjsing.webp" type="image/webp">
+                        <img src="images/nuxtjsing.png" alt="Nuxt.js 4" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-2">Nuxt.js 4</h3>
                         <p class="price">13 $</p>
@@ -151,7 +162,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="en" aria-labelledby="course-3">
-                    <img src="images/typescripting.png" alt="Master Typescript">
+                    <picture>
+                        <source srcset="images/typescripting.webp" type="image/webp">
+                        <img src="images/typescripting.png" alt="Master Typescript" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-3">Master Typescript</h3>
                         <p class="price">13 $</p>
@@ -160,7 +174,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="en" aria-labelledby="course-4">
-                    <img src="images/nextjsing.png" alt="Next.js 16">
+                    <picture>
+                        <source srcset="images/nextjsing.webp" type="image/webp">
+                        <img src="images/nextjsing.png" alt="Next.js 16" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-4">Next.js 16</h3>
                         <p class="price">13 $</p>
@@ -169,7 +186,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-5">
-                    <img src="images/goo.png" alt="Learn Go Programming">
+                    <picture>
+                        <source srcset="images/goo.webp" type="image/webp">
+                        <img src="images/goo.png" alt="Learn Go Programming" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-5">Learn Go Programming</h3>
                         <p class="price">13 $</p>
@@ -178,7 +198,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="en" aria-labelledby="course-6">
-                    <img src="images/tailwinding.png" alt="Master Tailwind CSS v4">
+                    <picture>
+                        <source srcset="images/tailwinding.webp" type="image/webp">
+                        <img src="images/tailwinding.png" alt="Master Tailwind CSS v4" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-6">Master Tailwind CSS v4</h3>
                         <p class="price">13 $</p>
@@ -187,7 +210,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-7">
-                    <img src="images/javaing.png" alt="Java Programming Course">
+                    <picture>
+                        <source srcset="images/javaing.webp" type="image/webp">
+                        <img src="images/javaing.png" alt="Java Programming Course" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-7">Java Programming Course</h3>
                         <p class="price">13 $</p>
@@ -196,7 +222,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="en" aria-labelledby="course-8">
-                    <img src="images/Python.png" alt="Python Programming Course">
+                    <picture>
+                        <source srcset="images/Python.webp" type="image/webp">
+                        <img src="images/Python.png" alt="Python Programming Course" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-8">Python Programming Course</h3>
                         <p class="price">13 $</p>
@@ -205,7 +234,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-9">
-                    <img src="images/algoritma.png" alt="Algoritma Geliştirme Eğitimi">
+                    <picture>
+                        <source srcset="images/algoritma.webp" type="image/webp">
+                        <img src="images/algoritma.png" alt="Algoritma Geliştirme Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-9">Algoritma Geliştirme Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -213,7 +245,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-10">
-                    <img src="images/c.png" alt="C Programlama Eğitimi">
+                    <picture>
+                        <source srcset="images/c.webp" type="image/webp">
+                        <img src="images/c.png" alt="C Programlama Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-10">C Programlama Eğitimi</h3>
                         <p class="price">599 TL</p>
@@ -222,7 +257,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-11">
-                    <img src="images/cplus.jpg" alt="C++ Programlama Eğitimi">
+                    <picture>
+                        <source srcset="images/cplus.webp" type="image/webp">
+                        <img src="images/cplus.jpg" alt="C++ Programlama Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-11">C++ Programlama Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -231,7 +269,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-12">
-                    <img src="images/pyhton.png" alt="Python Programlama Eğitimi">
+                    <picture>
+                        <source srcset="images/pyhton.webp" type="image/webp">
+                        <img src="images/pyhton.png" alt="Python Programlama Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-12">Python Programlama Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -240,7 +281,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-13">
-                    <img src="images/java.png" alt="Java Programlama Eğitimi">
+                    <picture>
+                        <source srcset="images/java.webp" type="image/webp">
+                        <img src="images/java.png" alt="Java Programlama Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-13">Java Programlama Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -249,7 +293,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-14">
-                    <img src="images/go.png" alt="Go Programlama Eğitimi">
+                    <picture>
+                        <source srcset="images/go.webp" type="image/webp">
+                        <img src="images/go.png" alt="Go Programlama Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-14">Go Programlama Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -257,7 +304,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-15">
-                    <img src="images/react.png" alt="Uygulamalı React Js Eğitimi">
+                    <picture>
+                        <source srcset="images/react.webp" type="image/webp">
+                        <img src="images/react.png" alt="Uygulamalı React Js Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-15">Uygulamalı React Js Eğitimi</h3>
                         <p class="price">599 TL</p>
@@ -265,7 +315,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-16">
-                    <img src="images/nextjs.png" alt="Next.js Eğitimi">
+                    <picture>
+                        <source srcset="images/nextjs.webp" type="image/webp">
+                        <img src="images/nextjs.png" alt="Next.js Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-16">Next.js Eğitimi</h3>
                         <p class="price">219 TL</p>
@@ -273,7 +326,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-17">
-                    <img src="images/nuxt.png" alt="Nuxt.js Eğitimi">
+                    <picture>
+                        <source srcset="images/nuxt.webp" type="image/webp">
+                        <img src="images/nuxt.png" alt="Nuxt.js Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-17">Nuxt.js Eğitimi</h3>
                         <p class="price">219 TL</p>
@@ -281,7 +337,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="career" data-language="tr" aria-labelledby="course-18">
-                    <img src="images/yazilimci.png" alt="Yazılımcı Olma Kursu">
+                    <picture>
+                        <source srcset="images/yazilimci.webp" type="image/webp">
+                        <img src="images/yazilimci.png" alt="Yazılımcı Olma Kursu" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-18">Yazılımcı Olma Kursu</h3>
                         <p class="price">499 TL</p>
@@ -290,7 +349,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-19">
-                    <img src="images/react.png" alt="Uygulamalı React Native Eğitimi">
+                    <picture>
+                        <source srcset="images/react.webp" type="image/webp">
+                        <img src="images/react.png" alt="Uygulamalı React Native Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-19">Uygulamalı React Native Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -299,7 +361,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-20">
-                    <img src="images/frontend.jpg" alt="Komple Frontend Eğitimi">
+                    <picture>
+                        <source srcset="images/frontend.webp" type="image/webp">
+                        <img src="images/frontend.jpg" alt="Komple Frontend Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-20">Komple Frontend Eğitimi</h3>
                         <p class="price">599 TL</p>
@@ -308,7 +373,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-21">
-                    <img src="images/kompleweb.jpg" alt="Komple Web Eğitimi">
+                    <picture>
+                        <source srcset="images/kompleweb.webp" type="image/webp">
+                        <img src="images/kompleweb.jpg" alt="Komple Web Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-21">Komple Web Eğitimi</h3>
                         <p class="price">649 TL</p>
@@ -317,7 +385,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-22">
-                    <img src="images/django.png" alt="Django Web Geliştirme Eğitimi">
+                    <picture>
+                        <source srcset="images/django.webp" type="image/webp">
+                        <img src="images/django.png" alt="Django Web Geliştirme Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-22">Django Web Geliştirme Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -326,7 +397,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-23">
-                    <img src="images/tailwind.png" alt="Tailwind Css Eğitimi">
+                    <picture>
+                        <source srcset="images/tailwind.webp" type="image/webp">
+                        <img src="images/tailwind.png" alt="Tailwind Css Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-23">Tailwind Css Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -335,7 +409,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-24">
-                    <img src="images/javascript.png" alt="Uygulamalı Javascript Eğitimi">
+                    <picture>
+                        <source srcset="images/javascript.webp" type="image/webp">
+                        <img src="images/javascript.png" alt="Uygulamalı Javascript Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-24">Uygulamalı Javascript Eğitimi</h3>
                         <p class="price">499 TL</p>
@@ -344,7 +421,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-25">
-                    <img src="images/csharp.png" alt="C# Eğitimi">
+                    <picture>
+                        <source srcset="images/csharp.webp" type="image/webp">
+                        <img src="images/csharp.png" alt="C# Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-25">C# Eğitimi</h3>
                         <p class="price">499 TL</p>
@@ -353,7 +433,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-26">
-                    <img src="images/angular.jpg" alt="Angular Eğitimi">
+                    <picture>
+                        <source srcset="images/angular.webp" type="image/webp">
+                        <img src="images/angular.jpg" alt="Angular Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-26">Angular Eğitimi</h3>
                         <p class="price">499 TL</p>
@@ -361,7 +444,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-27">
-                    <img src="images/typescript.jpg" alt="Typescript Eğitimi">
+                    <picture>
+                        <source srcset="images/typescript.webp" type="image/webp">
+                        <img src="images/typescript.jpg" alt="Typescript Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-27">Typescript Eğitimi</h3>
                         <p class="price">549 TL</p>
@@ -370,7 +456,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-28">
-                    <img src="images/boostrap.png" alt="Bootstrap 5 Eğitimi">
+                    <picture>
+                        <source srcset="images/boostrap.webp" type="image/webp">
+                        <img src="images/boostrap.png" alt="Bootstrap 5 Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-28">Bootstrap 5 Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -379,7 +468,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-29">
-                    <img src="images/css.png" alt="Css Eğitimi">
+                    <picture>
+                        <source srcset="images/css.webp" type="image/webp">
+                        <img src="images/css.png" alt="Css Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-29">Css Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -387,7 +479,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-30">
-                    <img src="images/vue.jpg" alt="Vue Js Eğitimi">
+                    <picture>
+                        <source srcset="images/vue.webp" type="image/webp">
+                        <img src="images/vue.jpg" alt="Vue Js Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-30">Vue Js Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -395,7 +490,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-31">
-                    <img src="images/vuetypescript.png" alt="Vue 3 - Typescript">
+                    <picture>
+                        <source srcset="images/vuetypescript.webp" type="image/webp">
+                        <img src="images/vuetypescript.png" alt="Vue 3 - Typescript" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-31">Vue 3 - Typescript</h3>
                         <p class="price">229 TL</p>
@@ -404,7 +502,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="programming" data-language="tr" aria-labelledby="course-32">
-                    <img src="images/linq.png" alt="Linq Eğitimi">
+                    <picture>
+                        <source srcset="images/linq.webp" type="image/webp">
+                        <img src="images/linq.png" alt="Linq Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-32">Linq Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -413,7 +514,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-33">
-                    <img src="images/materialUi.png" alt="Material Ui Eğitimi">
+                    <picture>
+                        <source srcset="images/materialUi.webp" type="image/webp">
+                        <img src="images/materialUi.png" alt="Material Ui Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-33">Material Ui Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -422,7 +526,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-34">
-                    <img src="images/rxjs.png" alt="Rxjs Eğitimi">
+                    <picture>
+                        <source srcset="images/rxjs.webp" type="image/webp">
+                        <img src="images/rxjs.png" alt="Rxjs Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-34">Rxjs Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -430,7 +537,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="data-office" data-language="tr" aria-labelledby="course-35">
-                    <img src="images/sql.png" alt="Sql Eğitimi">
+                    <picture>
+                        <source srcset="images/sql.webp" type="image/webp">
+                        <img src="images/sql.png" alt="Sql Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-35">Sql Eğitimi</h3>
                         <p class="price">349 TL</p>
@@ -439,7 +549,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="data-office" data-language="tr" aria-labelledby="course-36">
-                    <img src="images/excel.png" alt="Excel Eğitimi">
+                    <picture>
+                        <source srcset="images/excel.webp" type="image/webp">
+                        <img src="images/excel.png" alt="Excel Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-36">Excel Eğitimi</h3>
                         <p class="price">319 TL</p>
@@ -448,7 +561,10 @@
                     </div>
                 </article>
                 <article class="course" data-topic="web" data-language="tr" aria-labelledby="course-37">
-                    <img src="images/html.png" alt="Html Eğitimi">
+                    <picture>
+                        <source srcset="images/html.webp" type="image/webp">
+                        <img src="images/html.png" alt="Html Eğitimi" width="750" height="422" loading="lazy" decoding="async">
+                    </picture>
                     <div class="courseInfo">
                         <h3 id="course-37">Html Eğitimi</h3>
                         <p class="price">Ücretsiz</p>
@@ -464,12 +580,18 @@
         <ul class="socialIcons">
             <li>
                 <a href="https://www.linkedin.com/in/can-boz-18582bb4/" class="socialIcon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.79-1.53 2.98 0 3.58 1.96 3.58 4.51v5.27Z"></path>
+                    </svg>
                 </a>
             </li>
             <li>
                 <a href="https://www.instagram.com/canbozofficial/" class="socialIcon" aria-label="Instagram">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                    </svg>
                 </a>
             </li>
         </ul>
