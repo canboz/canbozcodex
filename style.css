@@ -347,6 +347,19 @@ picture {
   justify-self: center;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .bannerImg,
+  .aboutImg {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .bannerImg:hover,
+  .aboutImg:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+}
+
 .aboutImg {
   display: none;
 }
@@ -641,7 +654,14 @@ picture {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn,
+  .bannerImg,
+  .aboutImg {
     transition: none;
+  }
+
+  .bannerImg:hover,
+  .aboutImg:hover {
+    transform: none;
   }
 }
